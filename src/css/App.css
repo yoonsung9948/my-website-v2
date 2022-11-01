@@ -1,0 +1,73 @@
+Canvas {
+  background-color: #cce6cb;
+}
+
+*:focus {
+  outline: none;
+}
+
+#name-container {
+  display: flex;
+  height: min-content;
+  position: absolute;
+  z-index: 1;
+  
+pointer-events: none;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#name {
+  position: fixed;
+  top: 0px;
+  font-family: 'Barlow Condesed';
+  letter-spacing: 0.08em;
+  margin-top: 0.8rem;
+  padding-left: 1.5rem;
+  font-size: 1.8rem;
+  color: #333333;
+}
+
+#nav-container {
+  pointer-events: none;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#up-arrow {
+  cursor: pointer;
+  pointer-events: initial;
+  position: fixed;
+  width: 5vw;
+  top: 2vh;
+}
+
+#down-arrow {
+  cursor: pointer;
+  pointer-events: initial;
+  transform: rotate(90deg);
+  position: fixed;
+  width: 5vw;
+  bottom: 2vh;
+}
+
+
+section {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  color: #333333;
+  font-weight: 700;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+
+

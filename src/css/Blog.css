@@ -1,0 +1,35 @@
+
+
+.blog-content-container {
+background-color: beige;
+
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-description {
+
+    width: 80%;
+    height: 60%;
+}
+
+.blog-line {
+    display: flex;
+    align-items: flex-end;
+    width: max-content;
+    overflow: hidden;
+    height: 2rem;
+}
+.blog-heading-line {
+    height: 4rem;
+    font-size: 2.5rem;
+    margin-block-end: 1rem;
+    display: flex;
+    align-items: flex-end;
+    width: max-content;
+    overflow: hidden;
+}

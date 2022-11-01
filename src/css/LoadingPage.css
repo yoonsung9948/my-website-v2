@@ -1,0 +1,35 @@
+#progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+
+    background-color: #cce6cb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#progress-bar {
+    width: 20%;
+    height: 5%;
+    background-color: whitesmoke;
+    border-radius: 5vw;
+    position: relative;
+}
+#fill {
+    background-color: #cce6cb;
+    width: 0;
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    bottom: 1vh;
+    min-width: 1.5rem;
+    max-width: calc(100% - 2vh);
+    border-radius: 5vw;
+    transition: width 0.75s ease-in-out;
+}
+
+
