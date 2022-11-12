@@ -27,26 +27,60 @@
   font-family: 'Barlow Condesed';
   src: url(../fonts/BarlowCondensed-Medium.ttf);
 }
-
-html {
-  font-family: 'Ubuntu';
+* {
   box-sizing: border-box;
+
+}
+
+html,
+body,
+#root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Ubuntu';
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
-  /* eliminate horizontal scrolling */
-  overflow-x: hidden; 
+  overscroll-behavior: none;
+  pointer-events: none;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-#root {
-  height: 100%;
+.overlay {
   width: 100%;
+  height: 100%;
+  position: fixed;
+color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+#logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: max-content;
+  font-family: 'Barlow Condesed';
+  letter-spacing: 0.033em;
+  margin-block-start: 1vh;
+  margin-inline-start: 2vw;
+}
+
+#arrow {
+  position: fixed;
+  bottom: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#arrow h2 {
+  margin: 0;
 }

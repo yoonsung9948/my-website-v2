@@ -1,21 +1,22 @@
 import './css/Contacts.css'
 
 import gsap from 'gsap';
-import { useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 export default function Contacts() {
     gsap.registerPlugin(ScrollTrigger);
+    const ref = useRef();
 
     useEffect(() => {
         const ctx = gsap.context(() => {
 
             const tl = gsap.timeline({ 
                 defaults: {
-                    duration: 0.3,
+                    duration: 0.2,
                     ease: 'power4.out',
                     stagger: {
-                        amount: 0.1,
+                        amount: 0.075,
                     },
                 }
             });
@@ -31,24 +32,55 @@ export default function Contacts() {
                 y: -100,
             });
             ScrollTrigger.create({
-                trigger: document.querySelector('.contacts-page-section'),
-                start: 'top top+=1',
-                end: 'bottom bottom-=1',
+                trigger: ref.current,
+                // start: 'top top+=1',
+                // end: 'bottom bottom+=10',
+                start: 'top center',
+                end: 'bottom top',
                 animation: tl,
                 toggleActions: 'play reset play reset',
             });
         });
         return () => ctx.revert();
     }, []);
+    // useEffect(() => {
+    //     const ctx = gsap.context(() => {
+    //         // const tl = gsap.timeline();
+    //         // tl.from(ref.current, {
+    //         //     xPercent: 100,
+    //         //     duration: 1,
+    //         //     scrollTrigger: {
+    //         //         trigger: document.querySelector('#about-section'),
+    //         //         start: 'top 90%',
+    //         //         end: 'bottom top',
+    //         //         animation: tl,
+    //         //         toggleActions: 'play reset play reset',
+    //         //         markers: true,
+    //         //     }
+    //         // })
+    //         gsap.from(ref.current, {
+    //             xPercent: 100,
+    //             scrollTrigger: {
+    //                 trigger: document.querySelector('#contacts-section'),
+    //                 start: 'top bottom',
+    //                 end: 'top 33%',
+    //                 markers: true,
+    //                 toggleActions: 'play reset play reset',
+    //                 scrub: 1,
+    //             }
+    //         })
+    //     });
+    //     return () => ctx.revert();
+    // }, []);
     return (
-        <div style={{position: 'relative', height: '100%'}}>
+        <div ref={ref} style={{position: 'relative', height: '100%'}}>
             <div className='contacts-content-container'>
                 <div className='contacts-description'>
                     <div className='contacts-heading-line'>
                         <span>This is my contacts.</span>
                     </div>
                     <div className='contacts-line'>
-                        <span>I post about my daily life and stuff I find interesting.</span>
+                        <span>none</span>
                     </div>
                 </div>
             </div>

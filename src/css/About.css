@@ -3,20 +3,22 @@
 
 .content-container {
     font-family: 'Ubuntu', sans-serif;
-    width: 100%;
-    height: 65%;
-    background-color: #b8d8be;
+    position: absolute;
+    right: 0;
+    width: 55%;
+    height: 100vh;
+    background-color: beige;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
 
 
 .introduction, .coursework {
     height: 50%;
     margin: 2rem;
-    width: max(min-content, 30%);
+    width: max(min-content, 80%);
 }
 
 .line {

@@ -1,102 +1,73 @@
 import './css/App.css';
 
-import Scene from './Scene';
-import LoadingPage from './LoadingPage';
+// import Scene from './Scene';
 
-import gsap from 'gsap';
-import { useEffect, useState } from 'react';
+// import LoadingPage from './LoadingPage';
+
+// import gsap from 'gsap';
+// import { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-
+import Model from './Model'
 // import { OrbitControls } from '@react-three/drei';
 
-import LandingPage from './LandingPage';
+// import LandingPage from './LandingPage';
 import About from './About';
 import Blog from './Blog';
 import Work from './Work';
 import Contacts from './Contacts';
+import { Environment } from '@react-three/drei';
+// import { OrbitControls, FlyControls } from '@react-three/drei';
 
-import arrow from './assets/Antu_arrow-right.svg';
-
-
-function Navigation() {
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        repeat: -1, 
-        repeatDelay: 4,
-        defaults: {duration: 0.25, ease: 'power2'},
-      });
-      tl.fromTo('#up-arrow', { y: 0, }, {y: -10, })
-        .fromTo('#down-arrow', { y: 0, }, {y: 10, }, "<")     
-        .fromTo('#up-arrow', { y: -10, }, { y: 0, })
-        .fromTo('#down-arrow', { y: 10, }, {y: 0, }, "<")
-        .fromTo('#up-arrow', { y: 0, }, {y: -10, })
-        .fromTo('#down-arrow', { y: 0, }, {y: 10, }, "<")     
-        .fromTo('#up-arrow', { y: -10, }, { y: 0, })
-        .fromTo('#down-arrow', { y: 10, }, {y: 0, }, "<"); 
-
-    }); //navRef
-    return () => ctx.revert();
-  }, []);
-
-  function NavigationArrow(props) {
-    let transform, id;
-    if (props.direction === 'up') {
-      transform = 'rotate(270deg)';
-      id = 'up-arrow';
-    } else {
-      transform = 'rotate(90deg)';
-      id = 'down-arrow';
-    }
-    return(
-      <img style={{transform: transform}} id={id} src={arrow} alt="an arrow" />
-    );
-  }
-  
-  
-  return (
-    <>
-      <div id='name-container'>
-        <h1 id='name'>Yoonsung Hwang</h1>
-      </div>
-
-      <div id='nav-container' >
-        <NavigationArrow direction='up' />
-        <NavigationArrow direction='down' />
-      </div>
-    </>
-  );
-}
-
+const COLORS = {
+  aliceBlue: '#f0f8ff',
+  blue: '#daf0f7', 
+  green: '#e8f4ea',
+  darkerGreen: '#e0f0e3',
+};
 
 function App() {
+  const CONSTANT = 12.59, INTENSITY = 1;
   return (
     <>
-      <Navigation />
-      <LoadingPage />
-      <Canvas style={{position: 'fixed', zIndex: -1}} tabIndex={0} camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 20]}}>
-        <ambientLight intensity={0.1} />
-        <directionalLight position={[0, 0, 20]} />
-        <Scene />
-      </Canvas>
-      <section className='landing-page-section'>
-        <LandingPage />
-      </section>
-      <section className='about-page-section'>
-        <About />
-      </section>
-      <section className='work-page-section'>
-        <Work />
-      </section>
-      <section className='blog-page-section'>
-        <Blog />
-      </section>
+      <Canvas orthographic camera={{zoom: 35, position:[0, 0, 18]}} style={{zIndex: -1, position: 'fixed'}}>
+        <color attach='background' args={[COLORS.aliceBlue]} />
+        <Environment preset='city' />
+        <ambientLight intensity={INTENSITY/3} />
+        <spotLight 
+          penumbra={1}
+          position={[1*CONSTANT, 2*CONSTANT, 1*CONSTANT]}
+          intensity={INTENSITY * 2}
+          castShadow={false}
+          shadowBias={0}
+        />
+        <pointLight
+          position={[-2*CONSTANT, -0.5*CONSTANT, -2*CONSTANT]}
+          intensity={INTENSITY}
+        />
+        {/* <OrbitControls /> */}
+        <Model />
 
-      <section className='contacts-page-section'>
-        <Contacts />
-      </section>
+      </Canvas>   
+      <section className='section' id='about'>
+      </section>   
+      <div className='sections'>
+        <section className='section' id='about-section'>
+          <About />
+        </section>      
+        <section className='section' id='work-section'>
+          <Work />
+        </section>      
+        <section className='section' id='blog-section'>
+          <Blog />
+        </section>
+        <section className='section' id='contacts-section'>
+          <Contacts />
+        </section>
+      </div>
+
     </>
+
+
   );
 }
 
