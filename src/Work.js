@@ -4,9 +4,15 @@ import gsap from 'gsap';
 import { useRef, useEffect } from 'react';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
+
+function cardClick(card) {
+    card.style.width = '60vw';
+    card.style.height = '60vh';
+}
 export default function Work() {
     gsap.registerPlugin(ScrollTrigger);
     const ref = useRef();
+    const cardRef1 = useRef();
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -70,6 +76,43 @@ export default function Work() {
     //     });
     //     return () => ctx.revert();
     // }, []);
+    // cards.forEach((card) => {
+    //     card.addEventListener('click', () => {
+    //         cardClick(card);
+    //     })
+    // })
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            const cards = document.querySelectorAll('.work-card');
+            cards.forEach((card) => {
+                gsap.from(card, {
+                    scale: 0,
+                    duration: 0.3,
+                    scrollTrigger: {
+                        trigger: ref.current,
+                        start: 'top center',
+                        end: 'bottom top',
+                        toggleActions: 'play reset play reset',
+                    }
+                });
+            })
+
+        });
+        return () => ctx.revert();
+    }, []);
+    // function cardClick(card) {
+    //     console.log('clikced ', card);
+    //     card.style.width = '80vw';
+    //     card.style.width = '80vh';
+    // }
+
+    useEffect(() => {
+        const cards = document.querySelectorAll('.work-card');
+        cards.forEach(card => {
+            card.addEventListener('click', card => cardClick(card));
+        })
+    }, []);
     return (
         <>
             <div ref={ref} className='work-content-container'>
@@ -79,6 +122,12 @@ export default function Work() {
                     </div>
                     <div className='work-line'>
                         <span>404</span>
+                    </div>
+                    <div className='work-cards-container'>
+                        <div ref={cardRef1} className='work-card' ></div>
+                        <div className='work-card'></div>
+                        <div className='work-card'></div>
+                        <div className='work-card'></div>
                     </div>
                 </div>
             </div>

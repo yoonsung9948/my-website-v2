@@ -290,7 +290,6 @@ export default function Model(props) {
 
     }, []);
     useEffect(() => {
-        console.log('hello');
         gsap.to(earth.position, 
             {
                 x: -11.5,

@@ -43,7 +43,7 @@ body,
   margin: 0;
   padding: 0;
   overscroll-behavior: none;
-  pointer-events: none;
+  user-select: none;
 }
 
 body {
