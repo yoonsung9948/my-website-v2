@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.39dc9c40.css",
-    "main.js": "/static/js/main.2cd43c53.js",
+    "main.css": "/static/css/main.12a76367.css",
+    "main.js": "/static/js/main.d2a35449.js",
     "static/js/787.461ad236.chunk.js": "/static/js/787.461ad236.chunk.js",
     "static/media/Ubuntu-Light.ttf": "/static/media/Ubuntu-Light.0dd2d5986e2731a16ee7.ttf",
     "static/media/Ubuntu-Regular.ttf": "/static/media/Ubuntu-Regular.1cbb1b79a23478cc89ad.ttf",
     "static/media/Ubuntu-Medium.ttf": "/static/media/Ubuntu-Medium.e37c5546eb1a6efc4818.ttf",
     "static/media/Ubuntu-Bold.ttf": "/static/media/Ubuntu-Bold.fec2d0f1431a6114a6ce.ttf",
     "static/media/BarlowCondensed-Medium.ttf": "/static/media/BarlowCondensed-Medium.2afd924bd5156ee485b9.ttf",
-    "static/media/Antu_arrow-right.svg": "/static/media/Antu_arrow-right.c6e960b7fb334473e1b77b2519ac6865.svg",
     "index.html": "/index.html",
-    "main.39dc9c40.css.map": "/static/css/main.39dc9c40.css.map",
-    "main.2cd43c53.js.map": "/static/js/main.2cd43c53.js.map",
+    "static/media/Antu_arrow-right.svg": "/static/media/Antu_arrow-right.c6e960b7fb334473e1b77b2519ac6865.svg",
+    "main.12a76367.css.map": "/static/css/main.12a76367.css.map",
+    "main.d2a35449.js.map": "/static/js/main.d2a35449.js.map",
     "787.461ad236.chunk.js.map": "/static/js/787.461ad236.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.39dc9c40.css",
-    "static/js/main.2cd43c53.js"
+    "static/css/main.12a76367.css",
+    "static/js/main.d2a35449.js"
   ]
 }
