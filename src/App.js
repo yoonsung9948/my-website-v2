@@ -17,7 +17,6 @@ import Work from './Work';
 import Contacts from './Contacts';
 import { Environment } from '@react-three/drei';
 // import { OrbitControls, FlyControls } from '@react-three/drei';
-
 const COLORS = {
   aliceBlue: '#f0f8ff',
   blue: '#daf0f7', 
@@ -46,7 +45,6 @@ function App() {
         />
         {/* <OrbitControls /> */}
         <Model />
-
       </Canvas>   
       <section className='section' id='about'>
       </section>   

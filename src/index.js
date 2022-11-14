@@ -6,9 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import gsap from 'gsap';
 import img from './assets/Antu_arrow-right.svg';
 import { Suspense } from 'react';
-import { useProgress } from '@react-three/drei';
 import LoadingPage from './LoadingPage';
-import { useFrame } from '@react-three/fiber';
+import Pointer from './Pointer';
 
 // function Loader() {
 //     const { progress } = useProgress();
@@ -123,6 +122,7 @@ root.render(
     <>
         <LoadingPage />
         <Overlay style={{pointerEvents: 'none'}} />
+        <Pointer />
         <Suspense fallback={null}>
             <App />
         </Suspense>

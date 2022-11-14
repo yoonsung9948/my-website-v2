@@ -1,0 +1,10 @@
+.pointer {
+    background-color: #6495ed;
+    opacity: 0.625;
+    width: 3vw;
+    height: 3vw;
+    position: absolute;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
