@@ -63,3 +63,19 @@ pointer-events: none;
   color: gray;
 }
 
+.filler-div-container {
+  height: 100vh;
+  width: 55%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+.filler-divs {
+  height: 100vh;
+  width: 25%;
+  background-color: beige;
+  border-top-left-radius: 6.5vw;
+  border-top-right-radius: 6.5vw;
+}

@@ -280,7 +280,7 @@ export default function Model(props) {
                         x: Math.PI * -2,
                         scrollTrigger: {
                             trigger: '.sections',
-                            start: 'top top',
+                            start: 'top top+=50%',
                             end: 'bottom bottom',
                             scrub: 1,
                         },
@@ -299,7 +299,7 @@ export default function Model(props) {
                 scrollTrigger: {
                     trigger: '#about',
                     start: 'top top-=1',
-                    bottom: 'bottom bottom+=1',
+                    end: 'bottom center',
                     scrub: 1,
             }
         });

@@ -36,8 +36,8 @@ export default function About() {
                 trigger: ref.current,
                 // start: 'top top+=1',
                 // end: 'bottom bottom+=10',
-                start: 'top center',
-                end: 'bottom top',
+                start: 'top bottom+=50%',
+                end: 'bottom bottom+=50%',
                 animation: tl,
                 toggleActions: 'play reset play reset',
             });
@@ -59,8 +59,9 @@ export default function About() {
             //         markers: true,
             //     }
             // })
+            console.log(ref.current);
             gsap.from(ref.current, {
-                xPercent: 100,
+                yPercent: 100,
                 scrollTrigger: {
                     trigger: document.querySelector('#about-section'),
                     start: 'top bottom',
